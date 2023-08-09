@@ -1,0 +1,29 @@
+
+server:
+  port: 9003
+logging:
+  pattern:
+    console: '%d{HH:mm:ss.SSS} %clr(%-5level) ---  [%-15thread] %cyan(%-50logger{50}):%msg%n'
+
+#dubbo
+dubbo:
+  application:
+    name: target_file_service
+  registry:
+    address: zookeeper://192.168.66.100 #VM ip addr
+    port: 2181
+    timeout: 100000 #the registry won stop without a timeout restrict
+  protocol:
+    name: dubbo
+    port: -1 #-1 auto distribute
+  scan:
+    base-packages: com.example.target_file_service.service
+
+#fdfs
+fdfs:
+  so-timeout: 3000
+  connect-timeout: 10000
+  tracker-list: # TrackerList route
+    - 192.168.66.100:22122
+  fileUrl: http://192.168.66.100
+
