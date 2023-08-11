@@ -24,6 +24,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void add(Goods goods) {
         goodsMapper.insert(goods);
+
         Long goodsId = goods.getId();
 
         //add subs:image

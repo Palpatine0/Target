@@ -24,9 +24,13 @@
         <module>target_goods_service</module>
         <module>target_admin_service</module>
         <module>target_file_service</module>
-        <module>target_category_service</module>
 
         <module>target_user_category_api</module>
+        <module>target_category_service</module>
+
+        <module>target_search_service</module>
+
+
     </modules>
 
     <properties>

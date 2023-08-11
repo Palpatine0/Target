@@ -21,6 +21,16 @@ spring:
     url: jdbc:mysql:///target?serverTimezone=UTC
     username: root
     password: root
+  redis:
+    host: 192.168.66.100
+    port: 6379
+    timeout: 30000
+    jedis:
+      pool:
+        max-idle: 8
+        max-wait: -1
+        max-active: 8
+        min-idle: 0
 
 #dubbo
 dubbo:
@@ -35,4 +45,5 @@ dubbo:
     port: -1 #-1 auto distribute
   scan:
     base-packages: com.target.target_category_service.service
+
 
